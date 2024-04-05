@@ -1,0 +1,11 @@
+- name: DeployCDKProject
+  action: aws:runShellScript
+  inputs:
+    runCommand:
+    - "#!/bin/bash"
+    - wget "https://raw.githubusercontent.com/bpguasch/ec2-spot-workshops/blender_rendering_using_batch/content/rendering-with-batch/files/cdk-project"
+    - cd cdk-project
+    - python venv .venv
+    - source .venv/bin/activate
+    - pip install -r requirements.txt
+    - cdk deploy RenderingWithBatch-Pipeline

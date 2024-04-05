@@ -21,7 +21,7 @@ RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2
     rm ./aws/install
 
 # Download and install Blender
-RUN curl "https://ftp.halifax.rwth-aachen.de/blender/release/Blender2.93/blender-2.93.5-linux-x64.tar.xz" -o "blender.tar.xz" && \
+RUN curl "https://ftp.halifax.rwth-aachen.de/blender/release/Blender4.1/blender-4.1.0-linux-x64.tar.xz" -o "blender.tar.xz" && \
     tar -xvf blender.tar.xz --strip-components=1 -C /bin && \
     rm -rf blender.tar.xz && \
     rm -rf blender
