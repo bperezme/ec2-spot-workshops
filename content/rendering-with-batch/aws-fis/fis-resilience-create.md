@@ -53,7 +53,7 @@ cat <<EoF > fis-experiment.json
             "source": "none"
         }
     ],
-    "roleArn": "${FISCustomRole}",
+    "roleArn": "${FISRoleArn}",
     "tags": {}
 }
 EoF

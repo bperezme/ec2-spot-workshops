@@ -22,6 +22,6 @@ You are now logged in to the AWS console in an account that was created for you,
 - The Cloud9 environment where you will run all the commands
 - An AWS IAM Role used by AWS Fault Injection Simulator
 
-You can check the CloudFormation stack by downloading the following file: [CloudFormation stack](https://raw.githubusercontent.com/awslabs/ec2-spot-workshops/master/content/rendering-with-batch/rendering-with-batch.files/stack.yaml)
+You can check the CloudFormation stack by downloading the following file: [CloudFormation stack](https://raw.githubusercontent.com/awslabs/ec2-spot-workshops/master/content/rendering-with-batch/files/stack.yaml)
 
 {{% insert-md-from-file file="rendering-with-batch/start/review-outputs.md" %}}

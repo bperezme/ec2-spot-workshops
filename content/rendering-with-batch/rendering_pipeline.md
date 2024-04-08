@@ -45,7 +45,7 @@ We will use a Blender file from [BlendSwap](https://blendswap.com/categories). *
 Run the following command to download the file and upload it to S3:
 
 ```
-wget "https://raw.githubusercontent.com/awslabs/ec2-spot-workshops/master/content/rendering-with-batch/rendering-with-batch.files/blendfile.blend"
+wget "https://raw.githubusercontent.com/bpguasch/ec2-spot-workshops/blender_rendering_using_batch/content/rendering-with-batch/files/blendfile.blend"
 aws s3api put-object --bucket "${BucketName}" --key "${BlendFileName}" --body "${BlendFileName}"
 ```
 

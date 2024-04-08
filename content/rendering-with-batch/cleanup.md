@@ -6,17 +6,6 @@ weight: 170
 
 Before closing this workshop, let's make sure we clean up all the resources we created so we do not incur any unexpected costs.
 
-## S3 and ECR
-
-To be able to delete an S3 bucket or an ECR repository, they must be completely empty. Execute these commands to empty your bucket and delete the image that you pushed to your repository:
-
-```
-aws s3 rm "s3://${BucketName}" --recursive
-aws ecr batch-delete-image --repository-name "${RepositoryName}" --image-ids imageTag=latest
-```
-
-To learn more about these APIs, see [Emptying a bucket](https://docs.aws.amazon.com/AmazonS3/latest/userguide/empty-bucket.html) and [batch-delete-image CLI Command Reference](https://docs.aws.amazon.com/cli/latest/reference/ecr/batch-delete-image.html).
-
 ## AWS Batch
 
 When deleting AWS Batch components, the order matters; a CE cannot be deleted if it is associated to a valid queue, so we have to start by deleting the queue. Job queues and compute environments have to be disabled bore deleting them.
@@ -62,6 +51,8 @@ aws fis delete-experiment-template --id ${FIS_TEMPLATE}
 
 To learn more about this API, see [delete-experiment-template CLI Command Reference](https://docs.aws.amazon.com/cli/latest/reference/fis/delete-experiment-template.html).
 
-## Deleting the CloudFormation stack
+## Deleting the CloudFormation stacks
 
-Deleting the CloudFormation Stack will delete all the resources it created. To do that, navigate to [CloudFormation in the AWS Console](https://console.aws.amazon.com/cloudformation/home), select the stack **RenderingWithBatch** and delete it.
+Deleting a CloudFormation Stack will delete all the resources it created.
+To do that, navigate to [CloudFormation in the AWS Console](https://console.aws.amazon.com/cloudformation/home),
+select the stack **RenderingWithBatch-Pipeline** and delete it. Delete also the stack that you created at the beginning of the workshop.

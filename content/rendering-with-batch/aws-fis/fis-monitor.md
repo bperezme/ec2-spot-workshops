@@ -16,8 +16,10 @@ By running this script in your Cloud9 shell, you can see the individual render j
 ```
 latestJobId=$(aws batch list-jobs --job-queue RenderingQueue --filters name=JOB_NAME,values=${FIS_JOB_NAME} | jq -r '.jobSummaryList[0].jobId')
 numJobs=$(($(aws batch describe-jobs --jobs $latestJobId | jq -r '.jobs[].arrayProperties.size') - 1))
+
 for ((x=0;x<=numJobs;x++)); do
     echo "Checking Job: $x of $numJobs..."
+
     if [[ $(aws batch describe-jobs --jobs $latestJobId:$x | jq '.jobs[].attempts | length') -gt 1 ]]
       then
         echo "------------------------------------------------"
